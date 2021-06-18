@@ -8,3 +8,5 @@ Leaflet é uma biblioteca JavaScript de código aberto usada para construir apli
 
 faça um mapinha você também:
 https://leafletjs.com/examples/quick-start/
+
+(utilizei apenas o tutorial acima, bloco de notas ou editor de texto e um navegador web).
