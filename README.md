@@ -1,7 +1,4 @@
-# mapinha
-testando leaflet
-
-<h2>O que é o Leaflet?</h2>
+# Leaflet
 Leaflet é uma biblioteca JavaScript de código aberto usada para construir aplicativos de mapeamento da web. Lançado pela primeira vez em 2011, ele suporta a maioria das plataformas móveis e de desktop, com suporte a HTML5 e CSS3.
 
 <br>
