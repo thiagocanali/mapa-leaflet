@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+
+	<title>Testando Leaflet</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   	crossorigin=""/>
+
+	 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ 	 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  	 crossorigin=""></script>
+
+<style>
+
+#mapid { 
+width: 500px;
+height: 500px;
+border: solid 1px;
+}
+     
+</style>
+</head>
+
+<body>
+     <h5>  </h5>
+
+     <div id="mapid"></div>
+<script>
+
+	//setando a posição inicial do mapa (latitude, longitude)
+	var mymap = L.map('mapid').setView([-26.920,-49.065], 13);
+	
+	//setando a posição do "Marker" (ícone de localização)
+	var marker = L.marker([-26.913375784492114, -49.08546850789898]).addTo(mymap);
+
+	//setando a posição do "Circle" (área circular vermelha)
+	var circle = L.circle([-26.920, -49.066], {
+	    color: 'red',
+	    fillColor: '#f03',
+	    fillOpacity: 0.5,
+	    radius: 500
+	}).addTo(mymap);
+
+	//adicionando as popups e colocando um texto
+	marker.bindPopup("<b>Parque Ramiro Ruediger</b><br>Parque simples com um lago, pista para corrida, complexo poliesportivo e lanchonete.");
+	circle.bindPopup("<b>Centro de Blumenau</b>").openPopup();
+
+  	//criando mapa (requer token de login no site)
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox/streets-v11',
+	    tileSize: 512,
+	    zoomOffset: -1,
+	    accessToken: 'pk.eyJ1IjoidGhpYWdvY2FuYWxpIiwiYSI6ImNrcTJrajN4dzBmY24ydXA0bmpid2U2cnQifQ.ayiNaF0jq7O3XqCoyoHF1w'
+	}).addTo(mymap); 
+
+</script>
+</body>
+</html>
